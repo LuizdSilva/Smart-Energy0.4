@@ -1,0 +1,27 @@
+{
+  "consumo_mensal_kwh": {
+    "2024": {
+      "1": 85347,
+      "2": 96061,
+      "3": 120341,
+      "4": 115448,
+      "5": 101020,
+      "6": 78898,
+      "7": 66629,
+      "8": 79665,
+      "9": 108195,
+      "10": 105652,
+      "11": 96583,
+      "12": 81817
+    }
+  },
+  "total_oficial_kwh": {
+    "2024": 1135655
+  },
+  "geracao_anual_kwh": [
+    {"ano": 2024, "fonte": "solar", "kwh": 160684, "tipo": "Produção anual"},
+    {"ano": 2024, "fonte": "biogas", "kwh": 78779, "tipo": "Produção anual"},
+    {"ano": 2024, "fonte": "biodiesel", "kwh": 14952, "tipo": "Capacidade anual"},
+    {"ano": 2024, "fonte": "eolica", "kwh": 108, "tipo": "Capacidade anual"}
+  ]
+}
