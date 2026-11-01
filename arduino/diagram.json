@@ -1,0 +1,98 @@
+
+{
+  "version": 1,
+  "author": "SMART ENERGY - FACENS",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir",
+      "top": -90,
+      "left": 220,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "luz",
+      "top": 60,
+      "left": 250,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ar",
+      "top": 150,
+      "left": 250,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 110,
+      "left": 190,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 200,
+      "left": 190,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "botaoLuz",
+      "top": 260,
+      "left": 220,
+      "attrs": {
+        "color": "yellow",
+        "label": "ILUMINACAO",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "botaoAr",
+      "top": 340,
+      "left": 220,
+      "attrs": {
+        "color": "blue",
+        "label": "AR-CONDICIONADO",
+        "bounce": "0"
+      }
+    }
+  ],
+  "connections": [
+    ["esp:TX", "$serialMonitor:RX", ""],
+    ["esp:RX", "$serialMonitor:TX", ""],
+    ["pir:VCC", "esp:3V3", "red"],
+    ["pir:GND", "esp:GND.1", "black"],
+    ["pir:OUT", "esp:13", "green"],
+
+    ["esp:26", "luz:A", "yellow"],
+    ["luz:C", "r1:1", "black"],
+    ["r1:2", "esp:GND.1", "black"],
+
+    ["esp:27", "ar:A", "blue"],
+    ["ar:C", "r2:1", "black"],
+    ["r2:2", "esp:GND.1", "black"],
+
+    ["botaoLuz:1.l", "esp:32", "yellow"],
+    ["botaoLuz:2.l", "esp:GND.1", "black"],
+
+    ["botaoAr:1.l", "esp:33", "blue"],
+    ["botaoAr:2.l", "esp:GND.1", "black"]
+  ],
+  "serialMonitor": {
+    "display": "always"
+  }
+}
